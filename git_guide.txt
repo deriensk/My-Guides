@@ -1,0 +1,16 @@
+git init
+
+rm -rf .git #to remove it
+
+
+git status
+git add manage.py
+git rm --cached manage.py
+
+
+git add gbasics #gbasics is a folder
+
+git rm -r --cached gbasics #for entire folder
+
+git add .
+git commit -m 'my first commit'
