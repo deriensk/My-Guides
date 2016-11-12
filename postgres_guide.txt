@@ -1,0 +1,41 @@
+#install brew
+
+yes '' | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+PATH="$HOME/.linuxbrew/bin:$PATH"
+
+brew update
+brew upgrade
+brew doctor <!--- ignore the wounds seen>
+brew install postgresql --with-python
+
+sudo -u postgres psql
+
+psql
+
+postgres=# CREATE DATABASE sdkdbase;
+postgres=# CREATE USER sdkuser WITH PASSWORD 'sdkpassword';
+postgres=# ALTER ROLE sdkuser SET client_encoding TO 'utf8';
+postgres=# ALTER ROLE sdkuser SET default_transaction_isolation TO 'read committed';
+postgres=# ALTER ROLE sdkuser SET timezone TO 'UTC';
+postgres=# GRANT ALL PRIVILEGES ON DATABASE sdkdbase TO sdkuser;
+
+postgres=#\q 
+
+Select Database:
+
+postgres=# \connect sdkdbase
+Delete (drop) Database from postgresql:
+
+postgres=# DROP DATABASE sdkdbase;
+Delete (drop) Database from Command line:
+
+$ dropdb sdkdbase
+Connect & List all tables:
+
+postgres=# \connect sdkdbase
+sdkdbase=# \dt
+Drop a table
+
+postgres=# \connect sdkdbase
+sdkdbase=# \dt
+sdkdbase=# DROP TABLE auth_group CASCADE;
