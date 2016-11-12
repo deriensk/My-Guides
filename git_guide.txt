@@ -22,3 +22,7 @@ git add README.md
 git commit -m "first commit"
 git remote add origin https://github.com/deriensk/test.git
 git push -u origin master
+
+FOR ALREADY EXISING REPOSITORY
+git commit -m "............."
+git push -u origin master
