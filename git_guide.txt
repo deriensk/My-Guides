@@ -25,4 +25,4 @@ git push -u origin master
 
 FOR ALREADY EXISING REPOSITORY
 git commit -m "............."
-git push -u origin master
+git push origin master
